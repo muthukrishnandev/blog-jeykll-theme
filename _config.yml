@@ -1,0 +1,50 @@
+title: Blog Theme # The title of the blog
+description: > # this means to ignore newlines until "url:"
+  Simple Blog description
+url: https://muthukrishnandev.github.io # this is your site's root address. (No trailing slash at the end)
+baseurl: "/blog-theme" # this is your site's path after domain address. (No trailing slash at the end)
+favicon: "assets/favicons/favicon.ico" # set the favicon of the site 
+
+author: Blog Author # Your name 
+email: author@blog.com # your email shown in the footer
+avatar_url: "https://via.placeholder.com/500x500.png?text=Author%20Photo" # avatar in about page
+about_you: a short description about you. # short description about you in about page
+
+# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
+date_format: "%b %d" # date format of posts in home page
+back_to: "Home" # In the post page, you have a back button above the title, you can custom the text by yourself.
+show_excerpts: false # set to true to show excerpts on the homepage
+permalink: /:slug/ # change this permalink
+
+# generate social links in about page.
+social_links:
+  # rss: username
+  github: username
+  gitlab: username
+  # linkedin: username
+  # facebook: username
+  # twitter: username
+  # instagram: username
+  # youtube: username
+  # flickr: username
+  # dribbble: username
+  # pinterest: username
+  # reddit: username
+  # telegram: username
+
+# Small Tweaks
+pinned_post_title: "Pinned Posts"
+
+# Do Not Edit Below This
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+collections_dir: contents
+
+collections:
+  pinned_posts: # like regular posts but will be pinned at the top
+    output: true
+    label: "pinned"
+    permalink: /:slug/ # change the permalink
