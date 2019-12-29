@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<div class="about-page">
+  <head>
+    <title>{{ site.author }}</title>
+  </head>
+
+  <div class="post-back">
+    <a class="black-link" href="{{ '/' | relative_url }}"> ← {{ site.back_to }}</a>
+  </div>
+
+  <div class="about-header">
+    
+    {%- if site.avatar_url -%}
+      <img class="about-avatar" src="{{ site.avatar_url }}" />
+    {%- endif -%}
+
+    <div class="about-info">
+    {%- if site.author -%}
+      <div class="about-your-name">
+        {{ site.author | escape }}
+      </div>
+    {%- endif -%}
+
+    {%- if site.about_you -%}
+      <p class="about-description">
+        {{ site.about_you | escape }}
+      </p>
+    {%- endif -%}
+
+    {%- if site.email -%}
+      <p  class="about-description"><a class="u-email black-link" href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    {%- endif -%}
+
+    {%- include social.html -%}
+    </div>
+  </div>
+  <div class="about-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+</div>
