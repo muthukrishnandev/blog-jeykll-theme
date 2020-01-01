@@ -1,20 +1,23 @@
-# requiring the environment of Ruby 2.3.x
+# requiring the environment of Ruby 2.6.x
 image: ruby:2.6.5
 
 variables:
   JEKYLL_ENV: production
   LC_ALL: C.UTF-8
 
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - vendor/ruby
+
 before_script:
-   - bundle install
+  - bundle install -j $(nproc) --path vendor  # Install dependencies into ./vendor/ruby
+  
 # the 'pages' job will deploy and build your site to the 'public' path
 pages:
   stage: deploy
   script:
-    - mkdir .public
-    - cp -r * .public
-    - mv .public public
-    - bundle exec jekyll build -d public/
+    - bundle exec jekyll build -d public
   artifacts:
      paths:
        - public
