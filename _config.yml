@@ -1,24 +1,34 @@
 title: Blog Theme # The title of the blog
+short_title: # short title of the blog, if empty, title is used
 description: > # this means to ignore newlines until "url:"
   Simple Blog description
+
+# site url details
 url: https://muthukrishnandev.github.io # this is your site's root address. (No trailing slash at the end)
 baseurl: "/blog-theme" # this is your site's path after domain address. (No trailing slash at the end)
-favicon: "assets/favicons/favicon.ico" # set the favicon of the site 
 
-author: Blog Author # Your name 
-email: author@blog.com # your email shown in the footer
-avatar_url: "https://via.placeholder.com/500x500.png?text=Author%20Photo" # avatar in about page
-about_you: a short description about you. # short description about you in about page
+author:
+  name: Blog Author # Your name
+  email: author@blog.com # your email shown in about page
+  about: a short description about you. # short description about you in about page
+  image: "/author.png" # image in about page, must be placed in images folder
+
+# Small Tweaks
+back_to: "Home" # In the post page, you have a back button above the title, you can custom the text by yourself.
+pinned_post_title: "Pinned Posts" # In home page, the pinned posts title is shown, you can custom the text.
+
+favicon_path: "/assets/favicons" # path where all favicons are placed (No trailing slash in the end)
+images_path: "/assets/images" # path where all images are placed (No trailing slash in the end)
+favicon: "/favicon.ico" # set the favicon of the site, must be placed in favicons folder
 
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
 date_format: "%b %d" # date format of posts in home page
-back_to: "Home" # In the post page, you have a back button above the title, you can custom the text by yourself.
 show_excerpts: false # set to true to show excerpts on the homepage
-permalink: /:slug/ # change this permalink
+# permalink: /:collection/:slug # change this permalink for all posts
 
 # generate social links in about page.
+rss_feed: false # set true to enable rss feed
 social_links:
-  # rss: username
   github: username
   gitlab: username
   # linkedin: username
@@ -32,22 +42,39 @@ social_links:
   # reddit: username
   # telegram: username
 
-# Small Tweaks
-pinned_post_title: "Pinned Posts"
-
-# Do Not Edit Below This
-
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+#--------------------------------------------------------------------------------
+#    Do Not Edit Below This
+#--------------------------------------------------------------------------------
 
 collections_dir: contents
 
 collections:
   pinned_posts: # like regular posts but will be pinned at the top
     output: true
-    label: "pinned"
-    permalink: /:slug/ # change the permalink
+    permalink: /pinned/:slug/ # change the permalink
+  posts: # regular posts
+    output: true
+    permalink: /post/:slug/ # change the permalink
+
+defaults:
+  - scope:
+      path: "" # all files
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: "" # all files
+      type: "pinned_posts"
+    values:
+      layout: "post"
+  - scope:
+      path: "" # all files
+    values:
+      layout: "default"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
 # Exclude these files from your production _site
 exclude:

@@ -49,7 +49,7 @@
     <li><a class="black-link" href="https://dribbble.com/{{ social.dribbble | cgi_escape | escape }}">[Dribbble]</a></li>
   {%- endif -%}
 
-  {%- if social.rss -%}
+  {%- if site.rss_feed -%}
     <li><a class="black-link" href="{{ 'feed.xml' | relative_url }}">[RSS]</a></li>
   {%- endif -%}
 </ul>
