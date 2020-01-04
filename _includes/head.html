@@ -5,7 +5,9 @@
 {%- seo title=false -%}
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/agate.css" />
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
-<link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/{{ site.favicon }}" />
+<link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}{{ site.favicon_path }}{{ site.favicon }}" />
 <link rel="manifest" href="{{ site.baseurl }}/manifest.json">
-{%- feed_meta -%}
+{%- if site.rss_feed %}
+  {%- feed_meta -%}
+{% endif %}
 </head>

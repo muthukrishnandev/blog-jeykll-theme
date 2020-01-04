@@ -6,10 +6,12 @@
         {%- if site.author -%}
         <a class="black-link" href="{{ '/' | relative_url }}">home</a>
         | <a class="black-link" href="{{ 'about' | relative_url }}">about</a>
-        | <a class="black-link" href="{{ 'feed.xml' | relative_url }}">feed</a>
+          {%- if site.rss_feed -%}
+            | <a class="black-link" href="{{ 'feed.xml' | relative_url }}">feed</a>
+          {%- endif -%}
         {%- endif -%}
       </ul>
-      <span class="footer-right">&copy; {{ 'now' | date: "%Y" }} {{ site.author }}</span>
+      <span class="footer-right">&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}</span>
     </div>
   </div>
 </div>

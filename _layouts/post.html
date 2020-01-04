@@ -16,7 +16,7 @@ layout: default
         {%- assign date_format = "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
       </time>
-      {% assign author = site.author %}
+      {% assign author = site.author.name %}
       {% if page.author %}
         {% assign author = page.author %}
       {% endif %}
