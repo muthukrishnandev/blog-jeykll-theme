@@ -13,6 +13,12 @@ author:
   about: a short description about you. # short description about you in about page
   image: "/author.png" # image in about page, must be placed in images folder
 
+# two options are available
+# yearwise, the posts are displayed by post year
+# categorywise, the posts are displayed by category
+home_page: yearwise
+# home_page: categorywise
+
 # Small Tweaks
 back_to: "Home" # In the post page, you have a back button above the title, you can custom the text by yourself.
 pinned_post_title: "Pinned Posts" # In home page, the pinned posts title is shown, you can custom the text.
