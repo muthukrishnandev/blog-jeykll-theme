@@ -5,13 +5,15 @@ layout: default
 <div class="home">
   {% include header.html %}
 
-  {%- if site.pinned_posts.size > 0 -%}
-    <h2 id="starred-post-ref" class="post-year">{{ site.pinned_post_title }}</h2>
-    <ul>
-    {% for post in site.pinned_posts %}
-        <li>{% include post_item.html %}</li>
-    {% endfor %}
-    </ul>
+  {%- if site.show_pinned_posts -%}
+    {%- if site.pinned_posts.size > 0 -%}
+      <h2 id="starred-post-ref" class="post-year">{{ site.pinned_post_title }}</h2>
+      <ul>
+      {% for post in site.pinned_posts %}
+          <li>{% include post_item.html %}</li>
+      {% endfor %}
+      </ul>
+    {%- endif -%}
   {%- endif -%}
 
   {% if site.home_page == "categorywise" %}
