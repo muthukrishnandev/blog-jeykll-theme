@@ -16,8 +16,8 @@ author:
 # two options are available
 # yearwise, the posts are displayed by post year
 # categorywise, the posts are displayed by category
-# home_page: yearwise
-home_page: categorywise
+home_page: yearwise
+# home_page: categorywise
 
 # uncomment the line below, when using it as content
 # remote_theme: muthukrishnandev/blog-theme
@@ -52,8 +52,6 @@ social_links:
   # pinterest: username
   # reddit: username
   # telegram: username
-
-social_links_new_tab: false
 
 #--------------------------------------------------------------------------------
 #    Additional Options, change only if needed
